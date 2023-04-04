@@ -1,0 +1,334 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: 'Inter', sans-serif;
+}
+
+:root {
+  --main: #DC0000;
+  --hover: #850000;
+  --link: #000000;
+  --btn: #ffffff;
+}
+
+.dark-mode {
+  background-color: #222222;
+  color: #fff;
+  --link: #ffffff;
+  --btn: #222222;
+}
+
+.logo {
+  font-size: 4rem;
+  font-weight: 600;
+}
+
+header li {
+  list-style: none;
+}
+
+.navbar {
+  min-height: 6rem;
+  display: flex;
+  font-size: 3rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3rem 15rem;
+  background-color: none;
+}
+
+.icons {
+  display: flex;
+  gap: 2rem;
+  font-size: 3rem;
+}
+
+#dark-mode-toggle {
+  padding: 0.1rem;
+}
+
+#dark-mode-toggle:hover,
+#fullscreen-toggle:hover,
+#info-page:hover {
+  cursor: pointer;
+  color: var(--main);
+}
+
+.imp {
+  color: var(--main);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+}
+
+.timer-container {
+  padding: 4rem 10rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+#timer {
+  margin-top: 15rem;
+  font-size: 30rem;
+  font-weight: bold;
+  text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
+}
+
+.button-container {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  background-color: var(--main);
+  color: var(--btn);
+  border: none;
+  border-radius: 7rem;
+  padding: 1.5rem 4rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background-color: var(--hover);
+}
+
+#reset {
+  display: none;
+}
+
+.copy {
+  text-align: center;
+  align-items: flex-end;
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-top: 15rem;
+  margin-bottom: 3rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link);
+}
+
+a:hover {
+  color: var(--main);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h2,
+th {
+  font-size: 3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+p,
+li,
+td {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+li {
+  list-style: disc;
+}
+
+table {
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+th {
+  font-weight: 600;
+}
+
+main {
+  margin: 2rem 14rem;
+  padding: 1rem;
+}
+
+.socials {
+  color: var(--main);
+  text-decoration: underline;
+  font-size: 2rem;
+}
+
+.socials:hover {
+  color: var(--hover);
+}
+
+#social-buttons {
+  display: flex;
+  margin-top: 1rem;
+  font-size: 2rem;
+}
+
+#social-buttons a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--main);
+  color: #ffffff;
+}
+
+#social-buttons {
+  display: flex;
+  margin-top: 1rem;
+}
+
+#social-buttons a:hover {
+  background-color: var(--hover);
+}
+
+/* Media queries for tablet screens */
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 5rem;
+  }
+}
+
+/* Media queries for mobile screens */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .logo {
+    font-size: 3rem;
+  }
+
+  #dark-mode-toggle {
+    margin-left: 2rem;
+  }
+
+  .container {
+    height: auto;
+  }
+
+  #timer {
+    font-size: 15rem;
+  }
+
+  .button-container {
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  button {
+    margin: 0.5rem 0;
+  }
+
+  .copy {
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Media queries for small mobile screens */
+@media only screen and (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #dark-mode-toggle {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+
+  .container {
+    height: auto;
+    padding: 2rem;
+  }
+
+  #timer {
+    font-size: 10rem;
+  }
+
+  .button-container {
+    margin-top: 3rem;
+  }
+
+  button {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .copy {
+    margin-top: 5rem;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  #dark-mode-toggle {
+    margin-left: 2rem;
+  }
+
+  .timer-container {
+    padding: 2rem;
+  }
+
+  #timer {
+    margin-top: 5rem;
+    font-size: 15rem;
+  }
+
+  .button-container {
+    margin-top: 1rem;
+    flex-direction: column;
+  }
+
+  button {
+    padding: 1rem 2.5rem;
+    margin: 0.5rem 0;
+  }
+
+  .copy {
+    margin-top: 10rem;
+    margin-bottom: 1rem;
+  }
+}
