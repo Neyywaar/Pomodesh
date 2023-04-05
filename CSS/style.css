@@ -178,7 +178,7 @@ p,
 li,
 td {
   margin: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 li {
@@ -297,7 +297,7 @@ main {
   }
   
   p,li,td, .socials {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -355,7 +355,7 @@ main {
   }
   
   p,li,td,socials {
-    font-size: 1rem;
+    font-size: 1.1rem;
     margin: 0.5rem 0;
   }
   
@@ -415,7 +415,7 @@ main {
   }
 
   p,li,td,socials {
-    font-size: 1.2rem;
+    font-size: 0.9rem;
     margin: 0.5rem 0;
   }
 
