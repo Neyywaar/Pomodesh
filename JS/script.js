@@ -104,6 +104,7 @@ function toggleTimer() {
   resetBtn.style.display = isPaused ? "inline-block" : "none";
 }
 
+//Buttons
 startBtn.addEventListener("click", () => {
   toggleTimer();
 });
@@ -114,6 +115,20 @@ resetBtn.addEventListener("click", () => {
   resetBtn.style.display = "none";
 });
 
+const increaseBtn = document.querySelector(".increase");
+const decreaseBtn = document.querySelector(".decrease");
+
+increaseBtn.addEventListener("click", () => {
+  remainingTime += 300;
+  timerElem.innerText = formatTime(remainingTime);
+});
+
+decreaseBtn.addEventListener("click", () => {
+  remainingTime = Math.max(0, remainingTime - 300);
+  timerElem.innerText = formatTime(remainingTime);
+});
+
+//Keyboard Shortcuts
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     toggleTimer();
