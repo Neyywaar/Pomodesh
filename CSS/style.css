@@ -19,10 +19,10 @@ html {
 }
 
 .dark-mode {
-  background-color: #222222;
+  background-color: #000000;
   color: #fff;
   --link: #ffffff;
-  --btn: #222222;
+  --btn: #000000;
 }
 
 .logo {
