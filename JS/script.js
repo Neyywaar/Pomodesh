@@ -39,7 +39,7 @@ fullscreenToggle.addEventListener("click", () => {
 
 // Functional timer
 let countdownId;
-let remainingTime = 1500;
+let remainingTime = 3000;
 let isPaused = true;
 
 function formatTime(seconds) {
@@ -88,7 +88,7 @@ function pauseTimer() {
 function resetTimer() {
   isPaused = true;
   clearInterval(countdownId);
-  remainingTime = 1500;
+  remainingTime = 3000;
   timerElem.innerText = formatTime(remainingTime);
   alarm.pause();
   alarm.currentTime = 0;
