@@ -24,7 +24,7 @@ linkedinBtn.addEventListener("click", () => {
 
 // Dark Mode
 const darkModeToggle = document.getElementById("dark-mode-toggle");
-let isDarkMode = false;
+let isDarkMode = true;
 
 darkModeToggle.addEventListener("click", () => {
   isDarkMode = !isDarkMode;
@@ -33,6 +33,9 @@ darkModeToggle.addEventListener("click", () => {
     ? '<i class="fas fa-sun"></i>'
     : '<i class="fas fa-moon"></i>';
 });
+
+// Add dark mode by default
+body.classList.add("dark-mode");
 
 // Full Screen
 const fullscreenToggle = document.getElementById("fullscreen-toggle");
@@ -61,7 +64,7 @@ document.addEventListener("keydown", (event) => {
 
 function toggleDarkMode() {
   isDarkMode = !isDarkMode;
-  document.body.classList.toggle("dark-mode", isDarkMode);
+  body.classList.toggle("dark-mode", isDarkMode);
   darkModeToggle.innerHTML = isDarkMode
     ? '<i class="fas fa-sun"></i>'
     : '<i class="fas fa-moon"></i>';
