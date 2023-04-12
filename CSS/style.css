@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -81,9 +81,8 @@ header li {
 
 #timer {
   margin-top: 15rem;
-  font-size: 37rem;
+  font-size: 34rem;
   font-weight: bold;
-  font-family: 'Roboto', sans-serif;
   text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
