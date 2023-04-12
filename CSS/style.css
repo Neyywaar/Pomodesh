@@ -81,7 +81,7 @@ header li {
 
 #timer {
   margin-top: 15rem;
-  font-size: 28rem;
+  font-size: 34rem;
   font-weight: bold;
   text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
@@ -241,6 +241,10 @@ main {
 
 #social-buttons a:hover {
   background-color: var(--hover);
+}
+
+.hidden {
+  display: none !important;
 }
 
 @media screen and (max-width: 1200px) {
