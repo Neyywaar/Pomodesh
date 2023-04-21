@@ -29,4 +29,4 @@ Pomodesh is designed to help you manage your time and increase productivity by u
 
 ## Contact
 
-To get in touch with the developer, you can visit my socials from the Sandcode website, or email me directly at sandaceee@gmail.com.
+To get in touch with the developer, you can visit my socials from the Pomodesh website, or email me directly at sandaceee@gmail.com.
