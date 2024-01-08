@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+.index{
+    overflow: hidden;
+}
+
 html {
   font-size: 62.5%;
   font-family: 'Inter', sans-serif;
@@ -81,8 +85,8 @@ header li {
 
 #timer {
   margin-top: 15rem;
-  font-size: 22rem;
-  font-weight: bold;
+  font-size: 29rem;
+  font-weight: 400;
   text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
 
@@ -244,6 +248,21 @@ main {
 
 .hidden {
   display: none !important;
+}
+
+body.hide-elements .navbar,
+body.hide-elements .copy {
+  visibility: hidden;
+}
+
+body.hide-elements #timer,
+body.hide-elements .bbutton-container {
+  display: block;
+}
+
+body.hide-elements .timer-controls,
+body.hide-elements .main {
+  visibility: visible;
 }
 
 @media screen and (max-width: 1200px) {
