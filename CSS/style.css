@@ -7,7 +7,7 @@
 }
 
 .index{
-    overflow: hidden;
+  overflow: hidden;
 }
 
 html {
@@ -46,6 +46,8 @@ header li {
   align-items: center;
   padding: 3rem 15rem;
   background-color: none;
+  position: relative;
+  z-index: 1000;
 }
 
 .icons {

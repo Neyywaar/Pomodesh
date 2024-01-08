@@ -5,13 +5,10 @@ const timerElem = document.getElementById("timer");
 const alarm = document.getElementById("alarm");
 const body = document.body;
 
-// Add event listeners for mouse movement
-let mouseTimer;
 
+let mouseTimer;
 document.addEventListener("mousemove", () => {
   clearTimeout(mouseTimer);
-
-  // Show the elements
   body.classList.remove("hide-elements");
 
   // Set a timer to hide elements after 5 seconds of inactivity
