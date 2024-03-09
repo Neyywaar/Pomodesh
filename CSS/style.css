@@ -87,7 +87,7 @@ header li {
 
 #timer {
   margin-top: 15rem;
-  font-size: 29rem;
+  font-size: 42rem;
   font-weight: 400;
   text-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.1);
 }
@@ -122,12 +122,6 @@ header li {
   background-color: var(--hover);
 }
 
-.button-container {
-  margin-top: 2rem;
-  display: flex;
-  gap: 1rem;
-}
-
 button {
   background-color: var(--main);
   color: var(--btn);
@@ -154,7 +148,7 @@ button:hover {
   align-items: flex-end;
   font-weight: 300;
   font-size: 1rem;
-  margin-top: 12rem;
+  margin-top: 15rem;
 }
 
 a {

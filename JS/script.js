@@ -82,6 +82,8 @@ function updateTimer() {
     timerElem.innerText = "Time Up!";
     document.title = "Time Up! | Pomodesh";
     alarm.play();
+    timerElem.classList.add("time-up");
+    timerElem.style.fontSize = "19rem";
     startBtn.style.display = "none";
     resetBtn.style.display = "inline-block";
   }
@@ -102,11 +104,13 @@ function resetTimer() {
   clearInterval(countdownId);
   remainingTime = 3000;
   timerElem.innerText = formatTime(remainingTime);
+  timerElem.style.fontSize = "";
   alarm.pause();
   alarm.currentTime = 0;
   startBtn.innerText = "Start";
   startBtn.style.display = "inline-block";
 }
+
 
 function toggleTimer() {
   if (isPaused) {
