@@ -5,8 +5,19 @@ const timerElem = document.getElementById("timer");
 const alarm = document.getElementById("alarm");
 const body = document.body;
 
+const darkModeToggle = document.getElementById("dark-mode-toggle");
+const fullscreenToggle = document.getElementById("fullscreen-toggle");
+const increaseBtn = document.querySelector(".increase");
+const decreaseBtn = document.querySelector(".decrease");
+const countdownSound = document.getElementById("countdownSound");
 
 let mouseTimer;
+let isDarkMode = true;
+let countdownSoundPlayed = false;
+let countdownId;
+let remainingTime = 1500;
+let isPaused = true;
+
 document.addEventListener("mousemove", () => {
   clearTimeout(mouseTimer);
   body.classList.remove("hide-elements");
@@ -17,10 +28,6 @@ document.addEventListener("mousemove", () => {
   }, 5000);
 });
 
-// Dark Mode
-const darkModeToggle = document.getElementById("dark-mode-toggle");
-let isDarkMode = true;
-
 darkModeToggle.addEventListener("click", () => {
   isDarkMode = !isDarkMode;
   document.body.classList.toggle("dark-mode", isDarkMode);
@@ -29,11 +36,15 @@ darkModeToggle.addEventListener("click", () => {
     : '<i class="fas fa-moon"></i>';
 });
 
-// Add dark mode by default
-body.classList.add("dark-mode");
-
-// Full Screen
-const fullscreenToggle = document.getElementById("fullscreen-toggle");
+fullscreenToggle.addEventListener("click", () => {
+  if (!document.fullscreenElement) {
+    document.documentElement.requestFullscreen();
+    fullscreenToggle.innerHTML = '<i class="fa-solid fa-compress"></i>';
+  } else {
+    document.exitFullscreen();
+    fullscreenToggle.innerHTML = '<i class="fa-solid fa-expand"></i>';
+  }
+});
 
 function toggleFullScreen() {
   if (!document.fullscreenElement) {
@@ -44,15 +55,6 @@ function toggleFullScreen() {
     fullscreenToggle.innerHTML = '<i class="fa-solid fa-expand"></i>';
   }
 }
-
-fullscreenToggle.addEventListener("click", () => {
-  toggleFullScreen();
-});
-
-// Functional timer
-let countdownId;
-let remainingTime = 3000;
-let isPaused = true;
 
 function formatTime(seconds) {
   let hours = Math.floor(seconds / 3600);
@@ -77,6 +79,12 @@ function updateTimer() {
   remainingTime--;
   timerElem.innerText = formatTime(remainingTime);
   document.title = `${formatTime(remainingTime)} | Pomodesh`;
+
+  // Play countdown sound when there are 10 seconds remaining
+  if (remainingTime <= 10 && remainingTime > 0) {
+    countdownSound.play();
+  }
+
   if (remainingTime <= 0) {
     clearInterval(countdownId);
     timerElem.innerText = "Time Up!";
@@ -102,7 +110,7 @@ function pauseTimer() {
 function resetTimer() {
   isPaused = true;
   clearInterval(countdownId);
-  remainingTime = 3000;
+  remainingTime = 1500;
   timerElem.innerText = formatTime(remainingTime);
   timerElem.style.fontSize = "";
   alarm.pause();
@@ -110,7 +118,6 @@ function resetTimer() {
   startBtn.innerText = "Start";
   startBtn.style.display = "inline-block";
 }
-
 
 function toggleTimer() {
   if (isPaused) {
@@ -123,7 +130,6 @@ function toggleTimer() {
   resetBtn.style.display = isPaused ? "inline-block" : "none";
 }
 
-//Buttons
 startBtn.addEventListener("click", () => {
   toggleTimer();
 });
@@ -133,9 +139,6 @@ resetBtn.addEventListener("click", () => {
   startBtn.innerText = "Start";
   resetBtn.style.display = "none";
 });
-
-const increaseBtn = document.querySelector(".increase");
-const decreaseBtn = document.querySelector(".decrease");
 
 increaseBtn.addEventListener("click", () => {
   remainingTime += 300;
@@ -147,7 +150,6 @@ decreaseBtn.addEventListener("click", () => {
   timerElem.innerText = formatTime(remainingTime);
 });
 
-//Keyboard Shortcuts
 document.addEventListener("keydown", (event) => {
   if (event.code === "Space") {
     toggleTimer();
