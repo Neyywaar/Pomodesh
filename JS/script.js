@@ -79,12 +79,6 @@ function updateTimer() {
   remainingTime--;
   timerElem.innerText = formatTime(remainingTime);
   document.title = `${formatTime(remainingTime)} | Pomodesh`;
-
-  // Play countdown sound when there are 10 seconds remaining
-  if (remainingTime <= 10 && remainingTime > 0) {
-    countdownSound.play();
-  }
-
   if (remainingTime <= 0) {
     clearInterval(countdownId);
     timerElem.innerText = "Time Up!";
