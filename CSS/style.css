@@ -56,11 +56,6 @@ header li {
   font-size: 3rem;
 }
 
-#dark-mode-toggle {
-  padding: 0.1rem;
-}
-
-#dark-mode-toggle:hover,
 #fullscreen-toggle:hover,
 #info-page:hover {
   cursor: pointer;
@@ -512,4 +507,4 @@ body.hide-elements .main {
     height: 3rem;
     margin-right: 0.3rem;
   }
-}
+} 

@@ -1,4 +1,3 @@
-//Social Media Sharing
 const shareUrl = "https://pomodesh.netlify.app/";
 
 // Share on Twitter
@@ -22,21 +21,6 @@ linkedinBtn.addEventListener("click", () => {
   window.open(linkedinUrl, "_blank");
 });
 
-// Dark Mode
-const darkModeToggle = document.getElementById("dark-mode-toggle");
-let isDarkMode = true;
-
-darkModeToggle.addEventListener("click", () => {
-  isDarkMode = !isDarkMode;
-  document.body.classList.toggle("dark-mode", isDarkMode);
-  darkModeToggle.innerHTML = isDarkMode
-    ? '<i class="fas fa-sun"></i>'
-    : '<i class="fas fa-moon"></i>';
-});
-
-// Add dark mode by default
-body.classList.add("dark-mode");
-
 // Full Screen
 const fullscreenToggle = document.getElementById("fullscreen-toggle");
 
@@ -57,15 +41,5 @@ fullscreenToggle.addEventListener("click", () => {
 document.addEventListener("keydown", (event) => {
   if (event.code === "KeyF") {
     toggleFullScreen();
-  } else if (event.code === "KeyD") {
-    toggleDarkMode();
   }
 });
-
-function toggleDarkMode() {
-  isDarkMode = !isDarkMode;
-  body.classList.toggle("dark-mode", isDarkMode);
-  darkModeToggle.innerHTML = isDarkMode
-    ? '<i class="fas fa-sun"></i>'
-    : '<i class="fas fa-moon"></i>';
-}

@@ -5,14 +5,11 @@ const timerElem = document.getElementById("timer");
 const alarm = document.getElementById("alarm");
 const body = document.body;
 
-const darkModeToggle = document.getElementById("dark-mode-toggle");
 const fullscreenToggle = document.getElementById("fullscreen-toggle");
 const increaseBtn = document.querySelector(".increase");
 const decreaseBtn = document.querySelector(".decrease");
 const countdownSound = document.getElementById("countdownSound");
 
-let mouseTimer;
-let isDarkMode = true;
 let countdownSoundPlayed = false;
 let countdownId;
 let remainingTime = 1500;
@@ -26,14 +23,6 @@ document.addEventListener("mousemove", () => {
   mouseTimer = setTimeout(() => {
     body.classList.add("hide-elements");
   }, 5000);
-});
-
-darkModeToggle.addEventListener("click", () => {
-  isDarkMode = !isDarkMode;
-  document.body.classList.toggle("dark-mode", isDarkMode);
-  darkModeToggle.innerHTML = isDarkMode
-    ? '<i class="fas fa-sun"></i>'
-    : '<i class="fas fa-moon"></i>';
 });
 
 fullscreenToggle.addEventListener("click", () => {
@@ -111,6 +100,7 @@ function resetTimer() {
   alarm.currentTime = 0;
   startBtn.innerText = "Start";
   startBtn.style.display = "inline-block";
+  document.title = "Pomodesh";
 }
 
 function toggleTimer() {
@@ -158,18 +148,8 @@ document.addEventListener("keydown", (event) => {
   } else if (event.code === "ArrowDown") {
     remainingTime = Math.max(0, remainingTime - 300);
     timerElem.innerText = formatTime(remainingTime);
-  } else if (event.code === "KeyD") {
-    toggleDarkMode();
   }
 });
-
-function toggleDarkMode() {
-  isDarkMode = !isDarkMode;
-  body.classList.toggle("dark-mode", isDarkMode);
-  darkModeToggle.innerHTML = isDarkMode
-    ? '<i class="fas fa-sun"></i>'
-    : '<i class="fas fa-moon"></i>';
-}
 
 timerElem.innerText = formatTime(remainingTime);
 
