@@ -15,13 +15,21 @@ let countdownId;
 let remainingTime = 1500;
 let isPaused = true;
 
+let mouseTimer;
+
 document.addEventListener("mousemove", () => {
   clearTimeout(mouseTimer);
-  body.classList.remove("hide-elements");
+  // Remove hide-elements class from all elements
+  document.querySelectorAll(':not(.container)').forEach(element => {
+    element.classList.remove("hide-elements");
+  });
 
   // Set a timer to hide elements after 5 seconds of inactivity
   mouseTimer = setTimeout(() => {
-    body.classList.add("hide-elements");
+    // Add hide-elements class to all elements except those with class container
+    document.querySelectorAll(':not(.container)').forEach(element => {
+      element.classList.add("hide-elements");
+    });
   }, 5000);
 });
 
